@@ -1,13 +1,13 @@
-Users
+Companies
 - users must be able to sign up, sign in, and sign out.
-- Validate uniqueness of user login attribute (username or email).
-- a user must have the ability to create, read, update and destroy hours
+- Validate uniqueness of company login attribute (username or email).
+- a company must have the ability to create, read, update and destroy projects
 
 Projects
 - name, description, hours?
 
 
-./users - shows all users and their projects
+./companies - shows all users and their projects
 ./projects - shows all projects
-./users/id - show projects of indiv users
+./companies/id - show projects of indiv users
 ./projects/id - show indiv projects and descriptions
