@@ -11,3 +11,8 @@ Projects
 ./projects - shows all projects
 ./companies/id - show projects of indiv users
 ./projects/id - show indiv projects and descriptions
+
+
+#password_digest
+# emily = User.create(username:"emily",email:"emily@test.com",password:"emily_password")
+# tdot_ppc = Project.create(name:"tdot ppc", description: "run paid search ads", hours: 4)

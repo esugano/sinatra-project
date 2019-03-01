@@ -1,4 +1,4 @@
-class CompaniesController < ApplicationController
+class UsersController < ApplicationController
 
   get '/signup' do
     erb :'users/create_user'

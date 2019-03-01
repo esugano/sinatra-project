@@ -2,6 +2,6 @@ require './config/environment'
 
 
 use Rack::MethodOverride
-use CompaniesController
+use UsersController
 use ProjectsController
 run ApplicationController
