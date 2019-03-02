@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-  get '/signup' do
-    erb :'users/create_user'
+  get '/users' do
+    @user = User.all
+    erb :'users/show'
   end
 
 end
