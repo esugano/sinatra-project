@@ -1,15 +1,12 @@
-<h2> List of All Users & Their Projects </h2>
-<% User.all.each do |user| %>
+<h2> Here's a list of <%= @user.username.capitalize %>'s Projects</h2>
+<% @user.projects.each do |project|%>
 <ul>
  <li>
-   <%=user.username.capitalize%> works on the following projects: <br>
-  <ul>
-    <%user.projects.each do |project|%>
-      <li><b>Project Name:</b> <%=project.name.capitalize%><br>
-          Description: <%=project.description.capitalize%>
-        </li>
-      <%end%>
-  </ul>
-</li>
+   <b>Project Name: <%= project.name.capitalize %>: </b><br>
+    <ul>
+      <li>Project Description: <%=project.description.capitalize%></li>
+      <li>Project Hours Required: <%=project.hours%></li>
+    </ul>
+  <li>
 </ul>
 <% end %>

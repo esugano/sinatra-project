@@ -14,7 +14,7 @@ Projects
 
 
 #password_digest
-# emily = User.create(username:"emily",email:"emily@test.com",password:"emily_password")
-# tdot_ppc = Project.create(name:"tdot ppc", description: "run paid search ads", hours: 4)
-# adam = User.create(username:"adam",email:"adam@test.com",password:"adam_password")
-# kbfx_ppc = Project.create(name:"kbfx ppc", description: "run paid search ads", hours: 2)
+emily = User.create(username:"emily",email:"emily@test.com",password:"emily_password")
+tdot_ppc = Project.create(name:"tdot ppc", description: "run paid search ads", hours: 4)
+adam = User.create(username:"adam",email:"adam@test.com",password:"adam_password")
+kbfx_ppc = Project.create(name:"kbfx ppc", description: "run paid search ads", hours: 2)
