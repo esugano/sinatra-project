@@ -1,0 +1,15 @@
+<h2> List of All Employees & Their Projects </h2>
+<% @employees.each do |employee| %>
+<ul>
+ <li>
+   <%=employee.name.capitalize%> works on the following projects: <br>
+  <ul>
+    <%employee.projects.each do |project|%>
+      <li><b>Project Name:</b> <%=project.name.capitalize%><br>
+          Description: <%=project.description.capitalize%>
+        </li>
+      <%end%>
+  </ul>
+</li>
+</ul>
+<% end %>
