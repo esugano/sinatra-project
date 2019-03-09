@@ -1,9 +1,8 @@
-<!--List of individual employee's projects-->
-<!-- Tally up hours and projects #s-->
+<!-- show all projects-->
 
 
 
-<h2> Here's a list of <%= @employee.username.capitalize %> Employees</h2>
+<h2> Here's a list of <%= @employee.username.capitalize %>'s Projects</h2>
 <% @employee.projects.each do |project|%>
 <ul>
  <li>

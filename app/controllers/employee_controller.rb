@@ -32,4 +32,8 @@ class EmployeesController < ApplicationController
     erb :'employees/show'
   end
 
+  get '/signout' do
+    logout
+    redirect '/signup'
+  end
 end
