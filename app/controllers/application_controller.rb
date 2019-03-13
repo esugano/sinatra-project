@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    "Where Employees and Projects Meet!"
+    erb :'homepage'
   end
 
   helpers do
