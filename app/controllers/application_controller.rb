@@ -19,13 +19,13 @@ class ApplicationController < Sinatra::Base
       session[:user_id] != nil
     end
 
-    def current_user
+    def current_employee
       if logged_in?
-        User.find(session[:user_id])
+        Employee.find(session[:user_id])
       end
     end
 
-    def login (user_id)
+    def login(user_id)
       session[:user_id] = user_id
     end
 
