@@ -31,14 +31,12 @@ class EmployeesController < ApplicationController
     if logged_in?
       redirect '/projects'
     else
-      redirect 'login'
+      erb :'/employees/login'
     end
   end
 
   post '/login' do
     if !logged_in?
-      redirect '/login'
-    else
       @employee = Employee.find_by(username: params[:username])
         if @employee  == nil
           redirect '/login'
@@ -51,6 +49,8 @@ class EmployeesController < ApplicationController
           end
         end
       redirect '/projects'
+    else
+      redirect '/login'
     end
   end
 
