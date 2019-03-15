@@ -1,17 +1,9 @@
 <!-- show all individual projects, whose working on it, and whether its been completed-->
 
-<h2> Here's a list of <%= @employee.name.capitalize %>'s Projects</h2>
-<% @employee.projects.each do |project|%>
+<h2> Project Details</h2>
 <ul>
- <li>
-   <b>Project Name: <%= project.name.capitalize %>: </b><br>
-    <ul>
-      <li>Project Description: <%=project.description.capitalize%></li>
-      <li>Project Hours Required: <%=project.hours%></li>
-    </ul>
-  <li>
+<li><b>Project Name: </b><%=@project.name%></li>
+<li>Project Description: <%=@project.description%></li>
+<li>Project Hours: <%=@project.hours%></li>
+<li>Project Employee: <%=@project.employee.name.capitalize%></li>
 </ul>
-<% end %>
-
-<p> Let's create more projects! Start <a href="/projects/new">here</a>
-<p> You can also view all employees and projects <a href="/employees">here</a>

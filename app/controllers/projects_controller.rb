@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
       @project = Project.all.detect {|project| project.employee_id == current_employee.id}
       erb :'projects/show'
     else
-      redirect '/signup'
+      redirect '/login'
     end
   end
 
