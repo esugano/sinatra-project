@@ -1,9 +1,12 @@
 class ProjectsController < ApplicationController
 
   get '/projects' do
-    @project = Project.all
-    @employee = current_employee
-    erb :'projects/show'
+    if !logged_in?
+      erb :'employees/create_employee'
+    else
+      @project = Project.all
+      redirect '/projects/index'
+    end
   end
 
   get '/projects/new' do
@@ -26,8 +29,12 @@ class ProjectsController < ApplicationController
   end
 
   get '/projects/:id' do
-    @project = Project.find(session[:user_id])
-    erb :'projects/show'
+    if logged_in?
+      @project = Project.all.detect {|project| project.employee_id == current_employee.id}
+      erb :'projects/show'
+    else
+      redirect '/signup'
+    end
   end
 
 end

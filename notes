@@ -14,7 +14,8 @@ Projects
 
 
 #password_digest
-emily = User.create(username:"emily",email:"emily@test.com",password:"emily_password")
-tdot_ppc = Project.create(name:"tdot ppc", description: "run paid search ads", hours: 4)
-adam = User.create(username:"adam",email:"adam@test.com",password:"adam_password")
-kbfx_ppc = Project.create(name:"kbfx ppc", description: "run paid search ads", hours: 2)
+Project.all.detect {|project| project.employee_id == @adam.id}
+@adam = Employee.create(name:"Adam", username:"asugano", password:"asugano")
+@emily = Employee.create(name:"emily", username:"esugano", password:"esugano")
+@kbfx = Project.create(name:"KFBX PPC", description: "PPC", hours: "4")
+@tdot = Project.create(name:"TDOT PPC", description: "PPC", hours: "7")
