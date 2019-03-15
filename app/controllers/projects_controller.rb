@@ -2,10 +2,10 @@ class ProjectsController < ApplicationController
 
   get '/projects' do
     if !logged_in?
-      erb :'employees/create_employee'
+      redirect '/login'
     else
-      @project = Project.all
-      redirect '/projects/index'
+      @projects = Project.all
+      erb :'projects/index'
     end
   end
 

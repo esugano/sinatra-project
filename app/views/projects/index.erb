@@ -7,11 +7,12 @@
     <ul>
       <li>Project Description: <%=project.description.capitalize%></li>
       <li>Project Hours Required: <%=project.hours%></li>
-      <li>Project Employees:</li>
+      <li>Project Employee: <%=project.employee.name.capitalize%></li>
     </ul>
   <li>
 </ul>
 <% end %>
+<br>
 
 <p> Let's create more projects! Start <a href="/projects/new">here</a>
 <p> You can also view all employees and projects <a href="/employees">here</a>
