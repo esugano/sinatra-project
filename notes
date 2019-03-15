@@ -19,3 +19,5 @@ Project.all.detect {|project| project.employee_id == @adam.id}
 @emily = Employee.create(name:"emily", username:"esugano", password:"esugano")
 @kbfx = Project.create(name:"KFBX PPC", description: "PPC", hours: "4")
 @tdot = Project.create(name:"TDOT PPC", description: "PPC", hours: "7")
+@adam.projects << @tdot
+@emily.projects << @kbfx
