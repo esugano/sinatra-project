@@ -21,6 +21,13 @@ class EmployeesController < ApplicationController
     end
   end
 
+  get '/login' do
+    if logged_in?
+      redirect '/employees'
+    else
+      redirect '/login'
+    end
+  end
 
   get '/employees' do
     if logged_in?
