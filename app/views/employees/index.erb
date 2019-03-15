@@ -7,9 +7,11 @@
    <%=employee.name.capitalize%> works on the following projects: <br>
   <ul>
     <%employee.projects.each do |project|%>
-      <li><b>Project Name:</b> <%=project.name.capitalize%><br>
-          Description: <%=project.description.capitalize%>
-        </li>
+      <li><b>Project Name:</b> <%=project.name%><br></li>
+      <ul>
+      <li>Description: <%=project.description%></li>
+      <li>Hours: <%=project.hours%></li>
+      </ul>
       <%end%>
   </ul>
 </li>

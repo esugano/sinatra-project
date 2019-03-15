@@ -72,7 +72,7 @@ class EmployeesController < ApplicationController
   end
 
   get '/employees/:id' do
-    if !logged_in?
+    if logged_in?
       @employee = Employee.find(params[:id])
       erb :'employees/show'
     else
