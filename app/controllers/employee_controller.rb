@@ -36,23 +36,31 @@ class EmployeesController < ApplicationController
   end
 
   post '/login' do
-    if !logged_in?
-      @employee = Employee.find_by(username: params[:username])
+    #check if all fields are filled to before moving forward
+    if logged_in?
+      redirect '/projects'
+      redirect '/login'
+    else
+      #check if all fields are filled to before moving forward
+      if params.has_value?("")
+        redirect '/login'
+      else
+        @employee = Employee.find_by(username: params[:username])
+        #does employee exist?
         if @employee  == nil
           redirect '/login'
         else
+          #password is corrected?
           if @employee && @employee.authenticate(params[:password])
             login(@employee.id)
             redirect '/projects'
           else
             redirect '/login'
-          end
-        end
-      redirect '/projects'
-    else
-      redirect '/login'
-    end
-  end
+          end #51
+        end #47
+      end #42
+    end #40
+  end #38
 
   get '/employees' do
     if logged_in?
