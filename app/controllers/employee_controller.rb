@@ -25,7 +25,7 @@ class EmployeesController < ApplicationController
     if logged_in?
       redirect '/employees'
     else
-      redirect '/login'
+      redirect '/signup'
     end
   end
 
