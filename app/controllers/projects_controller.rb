@@ -30,8 +30,14 @@ class ProjectsController < ApplicationController
 
   get '/projects/:id' do
     if logged_in?
-      @project = Project.all.detect {|project| project.employee_id == current_employee.id}
-      erb :'projects/show'
+      @project = Project.all.detect {|project| project.id == params[:id].to_i}
+      #if project doesn't exist
+      if @project == nil
+        #need to put in a message here
+        redirect '/projects'
+      else
+        erb :'projects/show'
+      end
     else
       redirect '/login'
     end
