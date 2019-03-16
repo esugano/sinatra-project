@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
     if !logged_in?
       erb :'employees/create_employee'
     else
-      redirect '/projects'
+      redirect "/employees/#{current_employee.id}"
     end
   end
 
@@ -31,7 +31,7 @@ class EmployeesController < ApplicationController
   get '/login' do
     #if already logged_in, send to /projects
     if logged_in?
-      redirect '/projects'
+      redirect "/employees/#{current_employee.id}"
     else
       erb :'/employees/login'
     end
@@ -50,7 +50,7 @@ class EmployeesController < ApplicationController
         #password is corrected?
         if @employee && @employee.authenticate(params[:password])
           login(@employee.id)
-          redirect '/projects'
+          redirect "/employees/#{current_employee.id}"
         else
           redirect '/login'
         end #51

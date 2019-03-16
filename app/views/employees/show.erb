@@ -1,7 +1,15 @@
 <!--List of individual employee's projects and what is in progress or been completed-->
 <!-- Tally up hours and projects #s-->
 
-<h2> Here's a list of <%= @employee.name.capitalize %>'s Projects</h2>
+<%@total_hours = 0%>
+<%@total_projects = 0%>
+<%@employee.projects.each do |project|%>
+<%@total_hours += project.hours%>
+<%@total_projects += 1%>
+<%end%>
+
+<h2><%=@employee.name.capitalize%> has a total of <%=@total_hours%> hours on <%=@total_projects%> projects</h2>
+<h3> Here's a list of <%= @employee.name.capitalize %>'s Projects</h3>
 <% @employee.projects.each do |project|%>
 <ul>
  <li><b>Project Name:</b> <%= project.name%></li>
