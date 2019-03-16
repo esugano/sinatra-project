@@ -80,9 +80,16 @@ class ProjectsController < ApplicationController
   end
 
   delete '/projects/:id/delete' do
-    @project = Project.find(params[:id])
-    @project.delete if @project.employee_id == current_employee.id
-    redirect to '/projects'
+    if logged_in?
+      if @project.employee_id == current_employee.id
+        @project = Project.find(params[:id])
+        @project.delete if @project.employee_id == current_employee.id
+        redirect to '/projects'
+      else
+        redirect "/projects/#{params[:id]}/edit"
+      end
+    else
+      redirect to '/login'
   end
 
 end
