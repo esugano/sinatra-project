@@ -12,19 +12,21 @@ class EmployeesController < ApplicationController
   post '/signup' do
   #check if all fields are filled to before moving forward
     if !params.has_value?("")
-      @employee = Employee.create(name: params[:name], username: params[:username], password: params[:password])
-      if login(@employee.id)
-        #check if employee has any existing projects, otherwise, send to '/project/new'
-        if @employee.projects == nil
-          redirect '/project/new'
+      if Employee.find_by(username: params[:username]) == nil
+        @employee = Employee.create(name: params[:name], username: params[:username], password: params[:password])
+        if login(@employee.id)
+          #check if employee has any existing projects, otherwise, send to '/project/new'
+          if @employee.projects == nil
+            redirect '/project/new'
+          else
+            redirect '/employees'
+          end
         else
-          redirect '/employees'
+          redirect '/signup'
         end
       else
         redirect '/signup'
       end
-    else
-      redirect '/signup'
     end
   end
 
