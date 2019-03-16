@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     if logged_in?
       erb :'projects/new'
     else
-      redirect '/signup'
+      redirect '/login'
     end
   end
 
@@ -81,6 +81,7 @@ class ProjectsController < ApplicationController
 
   delete '/projects/:id/delete' do
     if logged_in?
+      @project = Project.find(params[:id])
       if @project.employee_id == current_employee.id
         @project = Project.find(params[:id])
         @project.delete if @project.employee_id == current_employee.id
@@ -90,6 +91,7 @@ class ProjectsController < ApplicationController
       end
     else
       redirect to '/login'
+    end
   end
 
 end
