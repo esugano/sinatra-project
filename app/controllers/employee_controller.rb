@@ -14,19 +14,18 @@ class EmployeesController < ApplicationController
     if !params.has_value?("")
       if Employee.find_by(username: params[:username]) == nil
         @employee = Employee.create(name: params[:name], username: params[:username], password: params[:password])
-        if login(@employee.id)
-          #check if employee has any existing projects, otherwise, send to '/project/new'
-          if @employee.projects == nil
-            redirect '/project/new'
-          else
-            redirect '/employees'
-          end
+        #check if employee has any existing projects, otherwise, send to '/project/new'
+        if @employee.projects == nil
+          redirect '/project/new'
         else
-          redirect '/signup'
+          login(@employee.id)
+          redirect "/employees/#{current_employee.id}"
         end
       else
-        redirect '/signup'
+        redirect '/login'
       end
+    else
+      redirect '/signup'
     end
   end
 
