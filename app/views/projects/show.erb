@@ -10,7 +10,10 @@
 </ul>
 
 <%if @project.employee_id == current_employee.id%>
-  Did you want to delete this project?
+  You can either edit the project here: <br>
+  <a href='/projects/<%=@project.id%>/edit'>Edit the Project</a> <br>
+  or <br>
+  Delete the project here:
   <form method="post" action="/projects/<%=@project.id%>/delete">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete Project">
