@@ -1,13 +1,22 @@
-<h3>Edit Project</h3>
-<p>Here is your existing project:<br>
-<h4><%=@project.name.%></h4>
-</p>
-<br>
-<br>
+<h2>Edit Project</h2>
+<p>Here is your existing project details:<br>
 <form action="/projects/<%=@project.id%>/edit" method="POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
-  <label>Edit Project:</label>
-  <br></br>
-  <input type="text" name="content" id="content">
+  <ul>
+  <!--edit project name-->
+  <li><b>Existing Project Name: "<%=@project.name%>"</b><br></li>
+  <label>Edit Project Name:</label>
+  <input type="text" name="name"> <br>  <br>
+  <!--edit project description-->
+  <li><b>Existing Project Description: "<%=@project.description%>"</b><br></li>
+  <label>Edit Project Description:</label>
+  <input type="text" name="description"> <br>  <br>
+
+  <!--edit project hours-->
+  <li><b>Existing Project Hours: "<%=@project.hours%>"</b><br></li>
+  <label>Edit Project Hours:</label>
+  <input type="text" name="hours"> <br>  <br>
+
   <input type="submit" value="submit">
+  </ul>
 </form>

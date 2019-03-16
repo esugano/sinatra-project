@@ -57,25 +57,27 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # patch '/tweets/:id/edit' do
-  #     if params[:content] == ""
-  #       redirect "/tweets/#{params[:id]}/edit"
-  #     else
-  #       if Tweet.find(params[:id]).user_id == session[:user_id]
-  #         @user = current_user
-  #         @tweet = @user.tweets.find(params[:id])
-  #         @tweet.content = params[:content]
-  #         @tweet.save
-  #         redirect "/tweets/#{params[:id]}"
-  #       else
-  #         redirect '/tweets'
-  #       end
-  #     end
-  #   end
-  #
-  #   delete '/tweets/:id/delete' do
-  #     @tweet = Tweet.find(params[:id])
-  #     @tweet.delete if @tweet.user == current_user
-  #     redirect to '/tweets'
-  #   end
+  patch '/projects/:id/edit' do
+    if params.has_value?("")
+      redirect "/projects/#{params[:id]}/edit"
+    else
+      if logged_in?
+        #project belongs to current_employee?
+        @project = Project.find(params[:id])
+        if @project.employee_id == current_employee.id
+          @project.name = params[:name]
+          @project.description = params[:description]
+          @project.hours = params[:hours].to_i
+          @project.save
+          redirect '/projects'
+        else
+          redirect '/projects'
+        end
+      else
+        redirect '/login'
+      end
+    end
+  end
+
+  
 end
