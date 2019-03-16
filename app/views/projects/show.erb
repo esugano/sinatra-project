@@ -6,10 +6,14 @@
 <li>Project Description: <%=@project.description%></li>
 <li>Project Hours: <%=@project.hours%></li>
 <li>Project Employee: <%=@project.employee.name.capitalize%></li>
+<li>Project Number: <%=@project.id%></li>
 </ul>
 
-Did you want to delete this project?
-<form method="post" action="/projects/<%=@project.id%>/delete">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Project">
-</form>
+<% if @project.employee_id == current_employee.id%>
+  Did you want to delete this project?
+  <form method="post" action="/projects/<%=@project.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete Project">
+  </form>
+  <%else%>
+  <%end%>
