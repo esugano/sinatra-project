@@ -9,7 +9,7 @@
 <li>Project Number: <%=@project.id%></li>
 </ul>
 
-<% if @project.employee_id == current_employee.id%>
+<%if @project.employee_id == current_employee.id%>
   Did you want to delete this project?
   <form method="post" action="/projects/<%=@project.id%>/delete">
       <input id="hidden" type="hidden" name="_method" value="DELETE">

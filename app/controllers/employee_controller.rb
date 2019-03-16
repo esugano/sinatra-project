@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
 
   get '/signup' do
+    #is the user already logged_in?
     if !logged_in?
       erb :'employees/create_employee'
     else
@@ -28,6 +29,7 @@ class EmployeesController < ApplicationController
   end
 
   get '/login' do
+    #if already logged_in, send to /projects
     if logged_in?
       redirect '/projects'
     else
@@ -37,29 +39,23 @@ class EmployeesController < ApplicationController
 
   post '/login' do
     #check if all fields are filled to before moving forward
-    if logged_in?
-      redirect '/projects'
+    if params.has_value?("")
       redirect '/login'
     else
-      #check if all fields are filled to before moving forward
-      if params.has_value?("")
-        redirect '/login'
-      else
-        @employee = Employee.find_by(username: params[:username])
-        #does employee exist?
-        if @employee  == nil
+      @employee = Employee.find_by(username: params[:username])
+      #does employee exist?
+      if @employee  == nil
           redirect '/login'
+      else
+        #password is corrected?
+        if @employee && @employee.authenticate(params[:password])
+          login(@employee.id)
+          redirect '/projects'
         else
-          #password is corrected?
-          if @employee && @employee.authenticate(params[:password])
-            login(@employee.id)
-            redirect '/projects'
-          else
-            redirect '/login'
-          end #51
-        end #47
-      end #42
-    end #40
+          redirect '/login'
+        end #51
+      end #47
+    end #42
   end #38
 
   get '/employees' do
