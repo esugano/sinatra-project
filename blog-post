@@ -1,0 +1,33 @@
+# Sinatra Final Project
+
+Hey Y'all!
+
+  After a very long time (no, really a long long time), I finally finished my Sinatra project!! I wanted to share my final project experience the second time around by reflecting back on how I felt during the first final project, my CLI Data Gem Project. Back then, I shared these tips:
+
+**1.	Picking a Website That is Easy To Scrape <br>**
+The idea was to make small, acheiveable goals. Sure, shoot for the moon but not on your first try. Take small SMART (Specific, Measurable, Achievable, Relevant and Time-bound) goals. I defeinitely took my own advice this time around. I initally wanted to create a final Sinatra project with multiple models and tons of functionaity. Then I remember how having  an overachieving and basically, unattainable goal made me break down and cry last time. This time I went with a more simple project and finished it up without any tears. :)
+
+
+**2.	Throw Out Advice #1 if You’re Absolutely Passionate About Your Chosen Website <br>**
+Well, I wasn't as passionate about my Sinatra project as I was about my CLI Data Gem one so we didn't run into any problems here.:)
+
+**3.	Start Small <br>**
+I definitely had this in mind when I was building out my Sinatra project. I tend to think of everything and anything and finish nothing. I'm trying hard to change that by breaking up my BIG goal into many, tiny bite size goals. Instead of how thinking about one model will affect views and controllers and functionality and design and presentation and passing the final project, I decided to finish one controller route, one view, or even one line of code at a time. Small steps over time = Goal achieved.
+
+**4. Find & Get Help<br>**
+Yes! I wish everyone would go out and find help because help is everywhere!! Whenever I got stuck, I jumped on slack, reached out to my project advisor, attend a study group, and Googled as much as I could. Everyone of those resources are at the tip of your fingers and they are invaluable.
+
+**5.	View Other Student Repos <br>**
+I didn't even need to do this but if I don't pass my project, this will definitely be my next step!
+
+**6.	Git Commit Basics & Best Practices <br>**
+Same as last time, I utilized these helpful Git resources:
+[Git Cheat Sheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)<br>
+[How To Write a Git Commit](https://chris.beams.io/posts/git-commit/)<br>
+[How To Use Git and Github (Long) Tutorial](https://www.udacity.com/course/how-to-use-git-and-github--ud775)<br>
+
+**7.	Join the Slack Channel <br>**
+I think I was automatically invited to the #sinatra-section channel and there was some helpful nuggets of info that helped me debug.
+
+**8.	When you’re feeling despair, listen to ol’ skool Beyonce and read Michelle Obama quotes <br>**
+Yes, all day everyday. I would now add upbeat Beatles songs into that mix as well.
