@@ -1,7 +1,7 @@
 class EmployeesController < ApplicationController
 
   get '/signup' do
-    #is the user already logged_in?
+    #is the user already logged_in?r
     if !logged_in?
       erb :'employees/create_employee'
     else
@@ -60,21 +60,15 @@ class EmployeesController < ApplicationController
   end #38
 
   get '/employees' do
-    if logged_in?
-      @employees = Employee.all
-      erb :'employees/index'
-    else
-      redirect '/login'
-    end
+    redirect_if_not_logged_in
+    @employees = Employee.all
+    erb :'employees/index'
   end
 
   get '/employees/:id' do
-    if logged_in?
-      @employee = Employee.find(params[:id])
-      erb :'employees/show'
-    else
-      redirect '/login'
-    end
+    redirect_if_not_logged_in
+    @employee = Employee.find(params[:id])
+    erb :'employees/show'
   end
 
   get '/signout' do
