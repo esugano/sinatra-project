@@ -32,6 +32,13 @@ class ApplicationController < Sinatra::Base
   	def logout
       session.clear
     end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect '/login'
+      end
+    end
+    
   end
 
 end
