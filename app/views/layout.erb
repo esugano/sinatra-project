@@ -6,10 +6,14 @@
 <br>
 <br>
 
-Make sure to <a href="/signup">Signup</a> or <a href="/login">Login</a> first!
 <ul>
 <li><a href="/employees">View by Employees</a></li>
 <li><a href="/projects">View by Projects</a></li>
 <li><a href="/projects/new">Create a Project</a></li>
 </ul>
+
+<%if logged_in?%>
 All Done? <a href="/signout">Sign Out Here</a>
+<%else%>
+Make sure to <a href="/signup">Signup</a> or <a href="/login">Login</a> first!
+<%end%>
